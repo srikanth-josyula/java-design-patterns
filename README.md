@@ -1,13 +1,13 @@
 # Java Design Patterns Example Project
 Design patterns are programming language independent strategies for solving the common object-oriented design problems.
 ## Project Outline: E-commerce Platform Backend
-This project will demonstrate the use of various design patterns within the context of an e-commerce platform. The platform will handle product management, user accounts, order processing, payment handling, and more. <br>
+This project will demonstrate the use of various design patterns within the context of an e-commerce platform. The platform will handle product management, user accounts, order processing, payment handling, and more. </br>
 **Technology Stack:** Java, Spring Boot, Hibernate, MySQL, Maven, REST API
 
 ## Creational Patterns
-Focus on the process of object creation, providing mechanisms to create objects in a manner suitable to the situation.<br>
-* **Factory Method Pattern:** Creates objects without specifying the exact class of object that will be created.
-  - **Use Case:** Creating different types of User objects (e.g., Admin, Customer, Seller) based on user input during registration. A UserFactory class that returns different subclasses of User depending on the provided type.
+Focus on the process of object creation, providing mechanisms to create objects in a manner suitable to the situation.</br>
+* **Factory Method Pattern:** Creates objects without specifying the exact class of object that will be created. The Factory Method Pattern delegates the creation of objects to a factory method, allowing subclasses to alter the type of objects that will be created without modifying the client code. 
+  - **Use Case:** Creating different types of User objects (e.g., Admin, Customer, Seller) based on user input during registration. A UserFactory class that returns different subclasses of User depending on the provided type. The UserFactory creates different User objects based on the provided user type, with each concrete User class implementing the User interface
 * **Abstract Factory Pattern:** Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
   - **Use Case:** Providing a family of related products like ElectronicProductFactory and ClothingProductFactory which produce products such as Phone, Laptop, Shirt, Pants.
 Code Implementation: An interface ProductFactory with concrete factories implementing the creation of specific types of products.
