@@ -9,7 +9,7 @@ Focus on the process of object creation, providing mechanisms to create objects 
 * **Factory Method Pattern:** Creates objects without specifying the exact class of object that will be created. The Factory Method Pattern delegates the creation of objects to a factory method, allowing subclasses to alter the type of objects that will be created without modifying the client code. 
   - **Use Case:** Creating different types of User objects (e.g., Admin, Customer, Seller) based on user input during registration. A UserFactory class that returns different subclasses of User depending on the provided type. The UserFactory creates different User objects based on the provided user type, with each concrete User class implementing the User interface
 * **Abstract Factory Pattern:** Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
-  - **Use Case:** Providing a family of related products like ElectronicProductFactory and ClothingProductFactory which produce products such as Phone, Laptop, Shirt, Pants.
+  - **Use Case:** Providing a family of related products like ElectronicProductFactory and GroceryProductFactory which produce products such as Phone, Laptop, Produce, Pantry.
 Code Implementation: An interface ProductFactory with concrete factories implementing the creation of specific types of products.
 * **Singleton Pattern:** Ensures a class has only one instance and provides a global point of access to it.
 * **Prototype Pattern:** Creates new objects by copying an existing object (prototype) rather than creating new instances from scratch.
