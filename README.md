@@ -7,10 +7,12 @@ This project will demonstrate the use of various design patterns within the cont
 ## Creational Patterns
 Focus on the process of object creation, providing mechanisms to create objects in a manner suitable to the situation.</br>
 * **Factory Method Pattern:** Creates objects without specifying the exact class of object that will be created. The Factory Method Pattern delegates the creation of objects to a factory method, allowing subclasses to alter the type of objects that will be created without modifying the client code. 
-  - **Use Case:** Creating different types of User objects (e.g., Admin, Customer, Seller) based on user input during registration. A UserFactory class that returns different subclasses of User depending on the provided type. The UserFactory creates different User objects based on the provided user type, with each concrete User class implementing the User interface
+  - **Use Case:** Creates one product at a time and allows a subclass to alter the type of object it creates. Think of it as choosing a specific type of chair from a single chair factory. Creating different types of User objects (e.g., Admin, Customer, Seller) based on user input during registration. A UserFactory class that returns different subclasses of User depending on the provided type. The UserFactory creates different User objects based on the provided user type, with each concrete User class implementing the User interface
+    
 * **Abstract Factory Pattern:** Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
-  - **Use Case:** Providing a family of related products like ElectronicProductFactory and GroceryProductFactory which produce products such as Phone, Laptop, Produce, Pantry.
+  - **Use Case:** Creates families of related products together. Think of it as choosing a complete set of furniture (chairs, tables, sofas) from a furniture store that matches a specific style. Providing a family of related products like ElectronicProductFactory and GroceryProductFactory which produce products such as Phone, Laptop, Produce, Pantry.
 Code Implementation: An interface ProductFactory with concrete factories implementing the creation of specific types of products.
+
 * **Singleton Pattern:** Ensures a class has only one instance and provides a global point of access to it.
 * **Prototype Pattern:** Creates new objects by copying an existing object (prototype) rather than creating new instances from scratch.
 * **Builder Pattern:** Constructs a complex object step by step. Allows for more readable code and construction of different representations.
