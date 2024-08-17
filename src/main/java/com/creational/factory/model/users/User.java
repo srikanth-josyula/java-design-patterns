@@ -1,4 +1,4 @@
-package com.sample.model.users;
+package com.creational.factory.model.users;
 
 public interface User {
     void accessPortal();

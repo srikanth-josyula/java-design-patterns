@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sample.model.ProductItem;
+import com.sample.model.products.ElectronicProducts;
 import com.sample.model.products.Products;
 import com.sample.service.ProductService;
 
@@ -27,4 +28,14 @@ public class ProductController {
 	public ProductItem getProduct(@RequestParam String productId) {
 		return productService.getProduct(productId);
 	}
+	
+	// Prototype Pattern Example
+    @GetMapping("/cloneProduct")
+    public String cloneProduct(@RequestParam String category, @RequestParam String productType) {
+        ElectronicProducts originalProduct = (ElectronicProducts) productService.createProduct(category, productType);
+        ElectronicProducts clonedProduct = (ElectronicProducts) originalProduct.clone();
+        return "Original Product: " + originalProduct.getClass().getSimpleName() + 
+               " | Cloned Product: " + clonedProduct.getClass().getSimpleName() + 
+               " | Clone HashCode: " + System.identityHashCode(clonedProduct);
+    }
 }

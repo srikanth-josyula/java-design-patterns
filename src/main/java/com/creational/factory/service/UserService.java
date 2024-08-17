@@ -1,13 +1,15 @@
-package com.sample.service;
+package com.creational.factory.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sample.model.users.User;
-import com.sample.service.factory.UserFactory;
+import com.creational.factory.model.users.User;
+import com.creational.factory.service.factory.UserFactory;
 
 @Service
 public class UserService {
 
+	@Autowired
     UserFactory userFactory;
 
     public User getUser(String userType) {

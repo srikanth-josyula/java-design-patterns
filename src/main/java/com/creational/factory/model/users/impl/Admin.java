@@ -1,6 +1,6 @@
-package com.sample.model.users.impl;
+package com.creational.factory.model.users.impl;
 
-import com.sample.model.users.User;
+import com.creational.factory.model.users.User;
 
 public class Admin implements User {
 	@Override

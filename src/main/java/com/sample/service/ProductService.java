@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import com.sample.cache.ProductCache;
 import com.sample.model.ProductItem;
+import com.sample.model.products.ElectronicProducts;
 import com.sample.model.products.Products;
 import com.sample.service.factory.ProductFactory;
 import com.sample.service.factory.impl.ElectronicProductFactory;
@@ -45,6 +46,11 @@ public class ProductService {
 		cache.putProduct(productId, product);
 		return product;
 	}
+	
+	// prototype example
+	  public ElectronicProducts cloneProduct(ElectronicProducts product) {
+	        return product.clone();
+	    }
 
 	private ProductItem loadProductFromDatabase(String productId) {
 		switch (productId) {
