@@ -1,9 +1,9 @@
-package com.creational.abstractFactory.service.factory.impl;
+package com.creational.abstractFactory.factory.impl;
 
+import com.creational.abstractFactory.factory.ProductFactory;
 import com.creational.abstractFactory.model.products.Products;
 import com.creational.abstractFactory.model.products.impl.Pantry;
 import com.creational.abstractFactory.model.products.impl.Produce;
-import com.creational.abstractFactory.service.factory.ProductFactory;
 
 //Concrete Factory Classes
 public class GroceryProductFactory implements ProductFactory {

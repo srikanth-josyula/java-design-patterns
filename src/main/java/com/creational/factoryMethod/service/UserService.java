@@ -3,8 +3,8 @@ package com.creational.factoryMethod.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.creational.factoryMethod.factory.UserFactory;
 import com.creational.factoryMethod.model.users.User;
-import com.creational.factoryMethod.service.factory.UserFactory;
 
 @Service
 public class UserService {

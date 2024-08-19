@@ -1,4 +1,4 @@
-package com.creational.factoryMethod.service.factory;
+package com.creational.factoryMethod.factory;
 
 import org.springframework.context.annotation.Configuration;
 

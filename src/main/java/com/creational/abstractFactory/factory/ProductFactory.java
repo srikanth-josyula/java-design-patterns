@@ -1,4 +1,4 @@
-package com.creational.abstractFactory.service.factory;
+package com.creational.abstractFactory.factory;
 
 import com.creational.abstractFactory.model.products.Products;
 

@@ -2,10 +2,10 @@ package com.creational.abstractFactory.service;
 
 import org.springframework.stereotype.Service;
 
+import com.creational.abstractFactory.factory.ProductFactory;
+import com.creational.abstractFactory.factory.impl.ElectronicProductFactory;
+import com.creational.abstractFactory.factory.impl.GroceryProductFactory;
 import com.creational.abstractFactory.model.products.Products;
-import com.creational.abstractFactory.service.factory.ProductFactory;
-import com.creational.abstractFactory.service.factory.impl.ElectronicProductFactory;
-import com.creational.abstractFactory.service.factory.impl.GroceryProductFactory;
 
 @Service
 public class ProductService {

@@ -4,19 +4,25 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-import com.creational.singletonMethod.cache.ProductDBEntry;
 import com.creational.singletonMethod.model.ProductItem;
+import com.creational.singletonMethod.singleton.EagerSingletonProductDBEntry;
 
 @Service
 public class ProductServiceSingleton {
 
     public String addProduct(String productType) {
-        ProductDBEntry productDBEntry = ProductDBEntry.getInstance();
+    	
+    	//Classic Singleton
+    	//ClassicProductDBEntry productDBEntry = ClassicProductDBEntry.getInstance();
         
-        // Create a new product for demonstration purposes
+        //Eager Singleton
+        EagerSingletonProductDBEntry productDBEntry = EagerSingletonProductDBEntry.getInstance();
+        
+        //Static Block Singleton
+    	//StaticBlockSingletonProductDBEntry productDBEntry = StaticBlockSingletonProductDBEntry.INSTANCE;
+        
+        
         ProductItem product = new ProductItem(productType);
-        
-        // Add the product to the singleton's cache
         Map<String, String> productEntry = productDBEntry.putProduct(product);
         
         // Return a response including the hashcode and the product ID added
