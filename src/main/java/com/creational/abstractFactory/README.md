@@ -1,10 +1,23 @@
 # Abstract Factory Pattern
 * The Abstract Factory pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes. 
 * It allows for the creation of various products that are related by a common theme but vary in implementation. 
+* **Purpose:** Creates families of related or dependent objects without specifying their concrete classes.
+* Structure:
+  - Abstract Factory: Provides an interface for creating products.
+  - Concrete Factories: Implement the abstract factory interface and produce specific families of products.
+  - Abstract Products: Define common methods for related products.
+  - Concrete Products: Implement the abstract products.
+  - Client: Uses the abstract factory to get products without knowing their concrete classes.
 
 ## This Project Use Case
 * In this example, we'll create an abstract factory for producing different types of products (ElectronicProduct and GroceryProduct). 
 * The factory will define an interface for creating these products, and we'll implement concrete factories for each product type.
+* Structure:
+  - Abstract Factory: ProductFactory
+  - Concrete Factories: ElectronicProductFactory, GroceryProductFactory
+  - Abstract Products: Product
+  - Concrete Products: LaptopProduct, MobileProduct, ProduceProduct, PantryProduct
+  - Client: ProductAbstractFactoryController
 
 ## When to use Abstract Factory Pattern
 * Multiple families of related products: When your system needs to be configured with multiple families of related products, and you want to ensure that the products from one family are compatible with the products from another family.
