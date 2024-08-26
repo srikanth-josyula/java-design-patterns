@@ -1,8 +1,8 @@
 package com.creational.abstractFactory.factory;
 
-import com.creational.abstractFactory.model.products.Products;
+import com.creational.abstractFactory.products.Product;
 
 //Abstract Factory Interface
 public interface ProductFactory {
-    Products createProduct(String productType);
+    Product createProduct(String type);
 }

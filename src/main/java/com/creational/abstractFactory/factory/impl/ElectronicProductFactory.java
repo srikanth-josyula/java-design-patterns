@@ -1,20 +1,21 @@
 package com.creational.abstractFactory.factory.impl;
 
 import com.creational.abstractFactory.factory.ProductFactory;
-import com.creational.abstractFactory.model.products.Products;
-import com.creational.abstractFactory.model.products.impl.Laptop;
-import com.creational.abstractFactory.model.products.impl.Mobile;
+import com.creational.abstractFactory.products.Product;
+import com.creational.abstractFactory.products.concrete.electronics.LaptopProduct;
+import com.creational.abstractFactory.products.concrete.electronics.MobileProduct;
 
-//Concrete Factory Classes
 public class ElectronicProductFactory implements ProductFactory {
-
+    
     @Override
-    public Products createProduct(String productType) {
-        if (productType.equalsIgnoreCase("Mobile")) {
-            return new Mobile();
-        } else if (productType.equalsIgnoreCase("Laptop")) {
-            return new Laptop();
+    public Product createProduct(String type) {
+        switch (type.toLowerCase()) {
+            case "laptop":
+                return new LaptopProduct();
+            case "mobile":
+                return new MobileProduct();
+            default:
+                throw new IllegalArgumentException("Unknown product type: " + type);
         }
-        throw new IllegalArgumentException("Unknown product type: " + productType);
     }
 }
