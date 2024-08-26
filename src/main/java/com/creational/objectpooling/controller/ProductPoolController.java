@@ -26,6 +26,7 @@ public class ProductPoolController {
         productItem.setName(name);
         productItem.setPrice(price);
 
+        // Print hashCode to understand if the same object is being reused
         System.out.println("Acquired ProductItem with hashCode: " + productItem.hashCode());
 
         Map<String, Object> response = new HashMap<>();
@@ -39,10 +40,9 @@ public class ProductPoolController {
 
     @GetMapping("/release")
     public Map<String, Object> releaseProductItem(@RequestParam String name) {
-        // Find the product by name for simplicity; usually, you'd manage this differently
         ProductItem productItem = productItemPool.acquireProductItem();
         Map<String, Object> response = new HashMap<>();
-
+        
         if (productItem.getName().equals(name)) {
             productItemPool.releaseProductItem(productItem);
             response.put("productItem", productItem);
@@ -56,3 +56,4 @@ public class ProductPoolController {
         return response;
     }
 }
+
