@@ -3,7 +3,7 @@ package com.creational.singletonMethod.singleton;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.creational.singletonMethod.model.ProductItem;
+import com.creational.singletonMethod.model.Product;
 
 // Singleton class
 public class StaticBlockSingletonProductDBEntry {
@@ -23,9 +23,17 @@ public class StaticBlockSingletonProductDBEntry {
 		INSTANCE = new StaticBlockSingletonProductDBEntry();
 	}
 
-	public Map<String, String> putProduct(ProductItem product) {
-		// Assume DB connection is happening
-		productCache.put(product.getId(), product.getName());
-		return productCache;
+	public Map<String, String> putProduct(Product product) {
+		// Store product in cache using its category as the key
+		productCache.put(product.getCategory(), product.getType());
+
+		// Prepare and return detailed information
+		Map<String, String> productInfo = new HashMap<>();
+		productInfo.put("category", product.getCategory());
+		productInfo.put("type", product.getType());
+		productInfo.put("className", product.getClass().getSimpleName());
+		productInfo.put("hashCode", Integer.toHexString(product.hashCode()));
+
+		return productInfo;
 	}
 }
