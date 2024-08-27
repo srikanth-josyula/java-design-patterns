@@ -1,71 +1,30 @@
 package com.creational.builderMethod.builder;
 
-import java.util.Map;
-
-import com.creational.builderMethod.model.ProductItem;
+import com.creational.builderMethod.model.Product;
 
 public class ProductBuilder {
-	private final String name;
-	private final double price;
-	private String color;
-	private String size;
-	private String warranty;
-	private Map<String, String> configuration;
+	public final String category;
+	public final String type;
+	public String name = ""; // Default optional values
+	public double price = 0.0; // Default optional values
 
-	// Mandatory fields constructor
-	public ProductBuilder(String name, double price) {
+	public ProductBuilder(String category, String type) {
+		this.category = category.toLowerCase();
+		this.type = type;
+	}
+
+	public ProductBuilder setName(String name) {
 		this.name = name;
+		return this;
+	}
+
+	public ProductBuilder setPrice(double price) {
 		this.price = price;
-	}
-
-	// Optional fields setters
-	public ProductBuilder color(String color) {
-		this.color = color;
 		return this;
 	}
 
-	public ProductBuilder size(String size) {
-		this.size = size;
-		return this;
-	}
+	public Product build() {
+		return new Product(this);
 
-	public ProductBuilder warranty(String warranty) {
-		this.warranty = warranty;
-		return this;
-	}
-
-	public ProductBuilder configuration(Map<String, String> configuration) {
-		this.configuration = configuration;
-		return this;
-	}
-
-	// Build method to create Product instance
-	public ProductItem build() {
-		return new ProductItem(this);
-	}
-
-	// Getters for Product class to access fields
-	public String getName() {
-		return name;
-	}
-
-	public double getPrice() {
-		return price;
-	}
-
-	public String getColor() {
-		return color;
-	}
-
-	public String getSize() {
-		return size;
-	}
-
-	public String getWarranty() {
-		return warranty;
-	}
-
-	public Map<String, String> getConfiguration() {
-		return configuration;
 	}
 }
