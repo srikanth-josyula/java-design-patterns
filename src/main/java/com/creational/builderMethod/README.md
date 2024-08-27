@@ -2,7 +2,7 @@
 The Builder pattern is a creational design pattern that allows you to construct complex objects step by step. It separates the construction of a complex object from its representation, so the same construction process can create different representations.
 
 * **Purpose:**  Simplifies the creation of complex objects by providing a clear, step-by-step process, allowing for more readable and maintainable code.
-* Structure:
+* *Structure:*
   - Builder: Provides methods to configure the different parts of the product. Typically returns the builder itself (method chaining).
   - Concrete Builder: Implements the Builder interface, providing the actual logic for configuring and creating the product.
   - Product: The complex object being built.
@@ -10,7 +10,7 @@ The Builder pattern is a creational design pattern that allows you to construct 
   - This Project Use Case
 
 In this example, we'll create a builder pattern for constructing complex Product objects. The Product object requires some mandatory fields (like category and type) and may include optional fields (like name and price).
-* Structure:
+* *Structure:*
   - Builder: ProductBuilder
   - Product: Product
   - Client: ProductAbstractFactoryController
